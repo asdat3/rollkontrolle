@@ -53,17 +53,22 @@ def reg_login_m():
         if not matching_user_json == None:
             var_user_to_login = User(matching_user_json["username"])
             login_user(var_user_to_login)
-            return redirect("/d1")
+            return redirect("/")
         else:
             return render_template("login/invalid_credentials_noti.html")
     else:
         return render_template("login/main_login.html")
 
 
-@app.route("/", methods=['GET'])
+@app.route("/", methods=['GET',"POST"])
 def home_index():
     if current_user.is_authenticated or not configg["login"]["enabled"]:
-        return("my Wiener is big")
+        if request.method == "POST":
+            len_s = int(request.form['len'])
+            print("DEBUG68: "+str(len_s)+"s")
+
+
+        return render_template("test1.html",time_now=datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S"))
     else:
         return redirect("/login")
 

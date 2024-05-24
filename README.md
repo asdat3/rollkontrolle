@@ -18,3 +18,4 @@ ToDo
 - Make current thing host and communicate with other raspi's to control multiple Rolladen via one Interface
 - auto updater so it can be deployed at nobrainer locations
 - login anti bruteforce > general ban system
+- actually make contact thing work

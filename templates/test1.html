@@ -1,0 +1,12 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>RollKontrolle</title>
+    <link rel="icon" href="/static/icon/main_free.png" type="image/png" />
+</head>
+<body>
+    Time: {{ time_now }}
+    <form method="post" id="post" autocomplete="off">
+        <input id="len" name="len" type="number" class="input" placeholder="Length (s)">
+        <input type="submit" onclick="document.getElementById('post').submit()" value="Submit"/>
+    </form>
+</body>

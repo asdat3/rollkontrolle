@@ -3,7 +3,7 @@
         "wa":"+49 170"
     },
     "login":{
-        "enabled":true,
+        "enabled":false,
         "data":[
             {
                 "username":"test",
