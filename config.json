@@ -1,0 +1,14 @@
+{
+    "support":{
+        "wa":"+49 170"
+    },
+    "login":{
+        "enabled":true,
+        "data":[
+            {
+                "username":"test",
+                "password":"test"
+            }
+        ]
+    }
+}
