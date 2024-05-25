@@ -1,4 +1,4 @@
-import json, datetime, random, string
+import json, datetime, random, string, sys, gpiozero, time
 from flask import Flask, request, render_template, redirect, send_file, url_for, jsonify, session, flash, after_this_request
 from flask_login import current_user, login_user, LoginManager, UserMixin, login_required, login_user, logout_user
 from flask_mobility import Mobility
@@ -58,6 +58,14 @@ def reg_login_m():
             return render_template("login/invalid_credentials_noti.html")
     else:
         return render_template("login/main_login.html")
+
+def control_rollade(len_s): #threading needed
+    RELAY_PIN = 18
+
+    relay = gpiozero.OutputDevice(RELAY_PIN, active_high=False, initial_value=False)
+    relay.on()
+    time.sleep(len_s)
+    relay.off()
 
 
 @app.route("/", methods=['GET',"POST"])
